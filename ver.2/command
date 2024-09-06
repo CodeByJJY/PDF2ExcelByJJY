@@ -1,0 +1,18 @@
+pyinstaller --noconsole --onefile --hidden-import=tkinter --hidden-import=pdfplumber --hidden-import=pdf2image --hidden-import=pandas --hidden-import=numpy --icon=induk.ico pdfToExcel_ver2.py
+
+
+
+
+a = Analysis(
+    ['your_script.py'],
+    pathex=['.'],
+    binaries=[],
+    datas=[],
+    hiddenimports=['tkinter', 'pdfplumber', 'pdf2image', 'pandas', 'numpy', 'PIL'],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=['matplotlib', 'scipy', 'numba'],  # 'numpy'는 제외하지 않습니다.
+    noarchive=False,
+    optimize=1,
+)
